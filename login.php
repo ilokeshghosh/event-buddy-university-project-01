@@ -11,7 +11,7 @@ session_start();
         $event_id = validate($_POST['event_id']);
         $p_password = validate($_POST['p_password']);
         $p_mail = validate($_POST['p_mail']);
-        // $p_name= validate($_POST['p_name']);
+       
 
 
         if(empty($event_id)){
@@ -27,10 +27,7 @@ session_start();
             exit();
         }
 
-        // elseif(empty($p_name)){
-        //     header("Location: signup-login.html?error=Mail ID is required");
-        //     exit();
-        // }
+        
 
         else{
             $sql ="SELECT * FROM participants WHERE event_id='$event_id' AND p_password='$p_password'";
