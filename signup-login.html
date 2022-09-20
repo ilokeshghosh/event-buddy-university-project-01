@@ -34,6 +34,13 @@
     <!-- title of the page  -->
     <title>EVENT BUDDY || SIGNUP-LOGIN</title>
 
+
+
+
+
+    <!-- login php -->
+    <!-- <?php include 'footer.php';?> -->
+
 </head>
 
 <body>
@@ -52,7 +59,7 @@
                     <a href="index.html#events-section" class="nav-item nav-link">Events</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="signup-login.html" class="nav-item nav-link">Login / Creat an Event</a>
+                    <a href="signup-login.html" class="nav-item nav-link">Login / Create an Event</a>
                 </div>
             </div>
         </div>
@@ -66,19 +73,19 @@
 
 
         <!-- signin form  -->
-        <form class="form-signin">
+        <form class="form-signin" action="login.php" method="post">
 
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">
                 Sign in
             </h1>
 
-            <input type="text" id="inputeventid" class="form-control" placeholder="Enter the alphanumaric event ID"
+            <input type="text" id="inputeventid" name="event_id" class="form-control" placeholder="Enter the alphanumaric event ID"
                 required="" autofocus="" pattern="[a-zA-Z0-9]+" />
 
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required=""
+            <input type="email" id="inputEmail" name="p_email" class="form-control" placeholder="Email address" required=""
                 autofocus="" />
 
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" />
+            <input type="password" id="inputPassword" name="p_password" class="form-control" placeholder="Password" required="" />
 
             <button class="btn btn-success btn-block" type="submit">
                 <i class="fas fa-sign-in-alt"></i> Sign in
@@ -124,6 +131,8 @@
 
 
 
+
+        
         
 
         <!-- signup form  -->
