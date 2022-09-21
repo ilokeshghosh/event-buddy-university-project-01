@@ -11,9 +11,7 @@ if(!$conn){
   
     echo "Connection Failed !";
 }
-else{
-    echo "connection successful";
-}
+
 
 
 
