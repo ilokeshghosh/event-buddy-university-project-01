@@ -80,16 +80,11 @@
                 Sign in
             </h1>
 
+            <?php 
 
-          
-
-    
-                 
-
-              
-            
-         
-
+            if (isset($_GET['error'])) { ?>
+                <p class="error"> <?php echo $_GET['error']; ?> </p>
+            <?php } ?>
 
         
             <input type="text" id="inputeventid" name="event_id" class="form-control" autofocus=""  placeholder="Enter the alphanumaric event ID"
@@ -152,51 +147,59 @@
         
 
         <!-- signup form  -->
-        <form action="signup.php" class="form-signup">
+        <form action="signup.php" method="post" class="form-signup ">
 
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">
                 Create New Event
             </h1>
 
-            <input type="text" id="event-name" class="form-control" placeholder="Event Name" required="" autofocus="" />
 
-            <input type="text" id="event-organizer" class="form-control" placeholder="Event Organizer" required=""
+            <?php 
+
+            if (isset($_GET['error'])) { ?>
+                <p class="error"> <?php echo $_GET['error']; ?> </p>
+            <?php } ?>
+
+            
+            <input type="text" id="event-name" name="event_name" class="form-control" placeholder="Event Name"   />
+
+            <input type="text" id="event-organizer" name="organizer" class="form-control" placeholder="Event Organizer" required=""
                 autofocus="" />
 
             <label for="event-start-date">Event Start Date :</label>
-            <input type="date" id="event-start-date" class="form-control" required="" autofocus="" />
+            <input type="date" id="event-start-date"  name="event_sdate" class="form-control" required="" autofocus="" />
 
             <label for="event-start-time">Event Start Time :</label>
-            <input type="time" id="event-start-time" class="form-control" required="" autofocus="" />
+            <input type="time" id="event-start-time" name="event_stime" class="form-control" required="" autofocus="" />
 
             <label for="event-end-date">Event End Date :</label>
-            <input type="date" id="event-end-date" class="form-control" required="" autofocus="" />
+            <input type="date" id="event-end-date" name="event_edate" class="form-control" required="" autofocus="" />
 
             <label for="event-end-time">Event End Time :</label>
-            <input type="time" id="event-end-duration" class="form-control" required="" autofocus="" />
+            <input type="time" id="event-end-duration" name="event_etime"  class="form-control" required="" autofocus="" />
 
             <label for="event-description">Event Description :</label>
-            <textarea class="form-control" id="event-description" rows="3">Event Description ...</textarea>
+            <textarea class="form-control" id="event-description" name="event_desc" rows="3">Event Description ...</textarea>
 
-            <input type="text" id="event-venue" class="form-control" placeholder="Event Venue" required=""
+            <input type="text" id="event-venue" class="form-control" name="event_venue" placeholder="Event Venue" required=""
                 autofocus="" />
 
-            <input type="text" id="event-admin-name" class="form-control" placeholder="Event Admin Name" required=""
+            <input type="text" id="event-admin-name" class="form-control" name="a_name" placeholder="Event Admin Name" required=""
                 autofocus="" />
 
-            <input type="email" id="event-admin-email" class="form-control" placeholder="Event Admin Email address"
+            <input type="email" id="event-admin-email" class="form-control" name="a_mail" placeholder="Event Admin Email address"
                 required autofocus="" />
 
-            <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="" />
+            <input type="password" id="user-pass" class="form-control"  placeholder="Password" required autofocus="" />
 
-            <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required
+            <input type="password" id="user-repeatpass" class="form-control" name="a_password" placeholder="Repeat Password" required
                 autofocus="" />
 
-            <label for="event-brochure">Event Brochure:</label>
-            <input type="file" id="event-brochure" name="event-brochure">
+            <label for="event-brochure">Event Brochure:(pdf file under 40mb)</label>
+            <input type="file" accept="application/pdf" id="event-brochure"  name="event_broc">
 
             <label for="Carousel-image">Carousel image: (3, 1460x620 images)</label>
-            <input type="file" accept="image/*" multiple id="corousel-image" name="corousel-image">
+            <input type="file" accept="image/*" multiple id="corousel-image" name="event_caro">
 
             <button class="btn btn-primary btn-block btn-danger" type="reset">
                 <i class="fas fa-eraser"></i> Reset
@@ -248,6 +251,8 @@
             $("#logreg-forms #cancel_signup").click(toggleSignUp);
         });
     </script>
+
+  
 
 </body>
 

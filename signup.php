@@ -11,18 +11,27 @@
         return $data;
       }
 
-
+      
+     
+     
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+        $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $event_id=substr(str_shuffle($data), 0, 6);
+        $_SESSION["event_id"]= $event_id;
+        // echo "$event_id"; 
 
         //admin name
         if (empty($_POST["a_name"])) {
           $a_nameErr = "Name is required";
         } else {
           $a_name = test_input($_POST["a_name"]);
+          $_SESSION["a_name"]= $a_name;
           // check if name only contains letters and whitespace
-          if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+          if (!preg_match("/^[a-zA-Z-' ]*$/",$a_name)) {
             $a_nameErr = "Only letters and white space allowed";
           }
         }
@@ -32,6 +41,7 @@
           $a_mailErr = "Email is required";
         } else {
           $a_mail = test_input($_POST["a_mail"]);
+          $_SESSION["a_mail"]= $a_mail;
           // check if e-mail address is well-formed
           if (!filter_var($a_mail, FILTER_VALIDATE_EMAIL)) {
             $a_mailErr = "Invalid email format";
@@ -43,6 +53,7 @@
           $a_passwordErr = "Password is required";
         } else {
           $a_password = test_input($_POST["a_password"]);
+        //   $_SESSION["event_id"]= $event_id;
           
         }
         //event name
@@ -50,7 +61,8 @@
           $event_nameErr = "Password is required";
         } else {
           $event_name = test_input($_POST["event_name"]);
-          if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+          $_SESSION["event_name"]= $event_name;
+          if (!preg_match("/^[a-zA-Z-' ]*$/",$event_name)) {
             $event_nameErr = "Only letters and white space allowed";
           }
           
@@ -59,6 +71,7 @@
           $event_sdateErr = "Event start date is required";
         } else {
           $event_sdate = test_input($_POST["event_sdate"]);
+          $_SESSION["event_sdate"]= $event_sdate;
           
           
         }
@@ -67,6 +80,7 @@
           $event_stimeErr = "Password is required";
         } else {
           $event_stime = test_input($_POST["event_stime"]);
+          $_SESSION["event_stime"]= $event_stime;
           
           
         }
@@ -75,6 +89,7 @@
           $event_edateErr = "Password is required";
         } else 
           $event_edate = test_input($_POST["event_edate"]);
+          $_SESSION["event_edate"]= $event_edate;
           
           
         }
@@ -83,6 +98,7 @@
           $event_etimeErr = "Password is required";
         } else {
           $event_etime = test_input($_POST["event_etime"]);
+          $_SESSION["event_etime"]= $event_etime;
           
           
         }
@@ -91,27 +107,80 @@
         if (empty($_POST["event_venue"])) {
             $event_venueErr = "Event venue  is required";
           } else {
-            $event_venuetime = test_input($_POST["event_venue"]);
+            $event_venue = test_input($_POST["event_venue"]);
+            $_SESSION["event_venue"]= $event_venue;
             
           }
 
 
         //event organizer
-        if (empty($_POST["event_organizer"])) {
-            $event_organizerErr = "Event organizer  is required";
+        if (empty($_POST["organizer"])) {
+            $organizerErr = "Event organizer  is required";
           } else {
-            $event_organizer = test_input($_POST["event_venue"]);
+            $organizer = test_input($_POST["organizer"]);
+            $_SESSION["organizer"]= $organizer;
+            
+          }
+        //event description
+        if (empty($_POST["event_desc"])) {
+            $event_descErr = "event_desc  is required";
+          } else {
+            $event_desc = test_input($_POST["event_desc"]);
+            $_SESSION["event_desc"]= $event_desc;
             
           }
 
-        // echo "$a_name";
-        // echo "$a_mail";
-        // echo "$a_password";
-        // echo "$event_name";
-        // echo "$a_name";
+          //event brochure
+        if (empty($_POST["event_broc"])) {
+            $event_brocErr = "Event Brochure  is required";
+          } else {
+            $event_broc= test_input($_POST["event_broc"]);
+            // $_SESSION["event_id"]= $event_id;
+            
+          }
+
+
+          //event carousel
+        if (empty($_POST["event_caro"])) {
+            $event_caroErr = "Event carousel  is required";
+          } else {
+            $event_caro= test_input($_POST["event_broc"]);
+            // $_SESSION["event_id"]= $event_id;
+            
+          }
+
+        // //   <br>
+        // echo "admin name :$a_name <br>";
+        // echo "admin mail: $a_mail <br>";
+        // echo "admin password: $a_password <br>";
+        // echo "event name : $event_name <br>";
+        // echo"event start date and time : $event_sdate";
+        // echo"$event_stime <br>";
+        // echo"event end date and time : $event_edate";
+        // echo"$event_etime <br>";
+       
+        // echo "event brochure: $event_broc <br>";
+        // echo"event carousel: $event_caro <br>";
+
+
+
+        $stmt=$conn->prepare("INSERT INTO admins (event_id, a_mail, a_name, a_password, event_name, event_sdate, event_stime, event_edate, event_etime, event_venue, organizer, event_desc, event_broc, event_caro) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssssssssbb",$event_id, $a_mail, $a_name, $a_password, $event_name, $event_sdate, $event_stime, $event_edate, $event_etime, $event_venue, $organizer, $event_desc, $event_broc, $event_caro);
+        $stmt->execute();
+        echo "New records created successfully";
+        $stmt->close();
+
 
 
       
+       
+
+
+
+
+        
+
+        
     }
 
 
