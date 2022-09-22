@@ -36,7 +36,7 @@
                         $_SESSION['p_mail'] = $row['p_mail'];
                         $_SESSION['p_password'] = $row['p_password'];
                         // echo" hi ";
-                        header("Location: home.php");
+                        header("Location: admin.html");
                         exit();
                     }else{
                         header("Location: signup-login.html?error=Incorrect User name or password");
