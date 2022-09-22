@@ -27,11 +27,11 @@
                 exit();
             }
             else{
-               $sql="SELECT * FROM admins WHERE event_id='$event_id' AND a_mail='$a_mail'";
+               $sql="SELECT * FROM admins WHERE event_id='$event_id' AND a_mail='$a_mail' AND a_password='$a_password'";
                $result=$conn->query($sql);
                if($result->num_rows > 0){
                     $row=$result->fetch_assoc();
-                    if ($row['event_id'] === $event_id && $row['a_mail'] === $a_mail) {
+                    if ($row['event_id'] === $event_id && $row['a_mail'] === $a_mail && $row['a_password']) {
                         $_SESSION['event_id'] = $row['event_id'];
                         $_SESSION['p_mail'] = $row['p_mail'];
                         $_SESSION['p_password'] = $row['p_password'];
