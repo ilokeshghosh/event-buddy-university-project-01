@@ -160,39 +160,39 @@
                 <p class="error"> <?php echo $_GET['error']; ?> </p>
             <?php } ?>
 
-            
+
             <input type="text" id="event-name" name="event_name" class="form-control" placeholder="Event Name"   />
 
-            <input type="text" id="event-organizer" name="organizer" class="form-control" placeholder="Event Organizer" required=""
+            <input type="text" id="event-organizer" name="organizer" class="form-control" placeholder="Event Organizer" 
                 autofocus="" />
 
             <label for="event-start-date">Event Start Date :</label>
-            <input type="date" id="event-start-date"  name="event_sdate" class="form-control" required="" autofocus="" />
+            <input type="date" id="event-start-date"  name="event_sdate" class="form-control"  autofocus="" />
 
             <label for="event-start-time">Event Start Time :</label>
-            <input type="time" id="event-start-time" name="event_stime" class="form-control" required="" autofocus="" />
+            <input type="time" id="event-start-time" name="event_stime" class="form-control"  autofocus="" />
 
             <label for="event-end-date">Event End Date :</label>
-            <input type="date" id="event-end-date" name="event_edate" class="form-control" required="" autofocus="" />
+            <input type="date" id="event-end-date" name="event_edate" class="form-control"  autofocus="" />
 
             <label for="event-end-time">Event End Time :</label>
-            <input type="time" id="event-end-duration" name="event_etime"  class="form-control" required="" autofocus="" />
+            <input type="time" id="event-end-duration" name="event_etime"  class="form-control"  autofocus="" />
 
             <label for="event-description">Event Description :</label>
             <textarea class="form-control" id="event-description" name="event_desc" rows="3">Event Description ...</textarea>
 
-            <input type="text" id="event-venue" class="form-control" name="event_venue" placeholder="Event Venue" required=""
+            <input type="text" id="event-venue" class="form-control" name="event_venue" placeholder="Event Venue" 
                 autofocus="" />
 
-            <input type="text" id="event-admin-name" class="form-control" name="a_name" placeholder="Event Admin Name" required=""
+            <input type="text" id="event-admin-name" class="form-control" name="a_name" placeholder="Event Admin Name" 
                 autofocus="" />
 
-            <input type="email" id="event-admin-email" class="form-control" name="a_mail" placeholder="Event Admin Email address"
-                required autofocus="" />
+            <input type="email" id="event-admin-email" class="form-control" name="a_mail"  placeholder="Event Admin Email address"
+                 autofocus="" />
 
-            <input type="password" id="user-pass" class="form-control"  placeholder="Password" required autofocus="" />
+            <input type="password" id="user-pass" class="form-control"  placeholder="Password"  autofocus="" />
 
-            <input type="password" id="user-repeatpass" class="form-control" name="a_password" placeholder="Repeat Password" required
+            <input type="password" id="user-repeatpass" class="form-control" name="a_password"  placeholder="Repeat Password" 
                 autofocus="" />
 
             <label for="event-brochure">Event Brochure:(pdf file under 40mb)</label>
@@ -243,13 +243,13 @@
             $("#logreg-forms .form-signup").toggle(); // display:block or none
         }
 
-        $(() => {
-            // Login Register Form
-            $("#logreg-forms #forgot_pswd").click(toggleResetPswd);
-            $("#logreg-forms #cancel_reset").click(toggleResetPswd);
-            $("#logreg-forms #btn-signup").click(toggleSignUp);
-            $("#logreg-forms #cancel_signup").click(toggleSignUp);
-        });
+        // $(() => {
+        //     // Login Register Form
+        //     $("#logreg-forms #forgot_pswd").click(toggleResetPswd);
+        //     $("#logreg-forms #cancel_reset").click(toggleResetPswd);
+        //     $("#logreg-forms #btn-signup").click(toggleSignUp);
+        //     $("#logreg-forms #cancel_signup").click(toggleSignUp);
+        // });
     </script>
 
   
