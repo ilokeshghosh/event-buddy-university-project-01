@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    session_start(); 
     include "db_conn.php";
 
 
@@ -54,12 +54,60 @@
             $event_nameErr = "Only letters and white space allowed";
           }
           
+          //event start date
+        if (empty($_POST["event_sdate"])) {
+          $event_sdateErr = "Event start date is required";
+        } else {
+          $event_sdate = test_input($_POST["event_sdate"]);
+          
+          
+        }
+          //event start time
+        if (empty($_POST["event_stime"])) {
+          $event_stimeErr = "Password is required";
+        } else {
+          $event_stime = test_input($_POST["event_stime"]);
+          
+          
+        }
+          //event end date
+        if (empty($_POST["event_edate"])) {
+          $event_edateErr = "Password is required";
+        } else 
+          $event_edate = test_input($_POST["event_edate"]);
+          
+          
+        }
+          //event end time
+        if (empty($_POST["event_etime"])) {
+          $event_etimeErr = "Password is required";
+        } else {
+          $event_etime = test_input($_POST["event_etime"]);
+          
+          
         }
 
-        echo "$a_name";
-        echo "$a_mail";
-        echo "$a_password";
-        echo "$event_name";
+        //event venue
+        if (empty($_POST["event_venue"])) {
+            $event_venueErr = "Event venue  is required";
+          } else {
+            $event_venuetime = test_input($_POST["event_venue"]);
+            
+          }
+
+
+        //event organizer
+        if (empty($_POST["event_organizer"])) {
+            $event_organizerErr = "Event organizer  is required";
+          } else {
+            $event_organizer = test_input($_POST["event_venue"]);
+            
+          }
+
+        // echo "$a_name";
+        // echo "$a_mail";
+        // echo "$a_password";
+        // echo "$event_name";
         // echo "$a_name";
 
 
