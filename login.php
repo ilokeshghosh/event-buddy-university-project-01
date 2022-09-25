@@ -35,6 +35,21 @@
                         $_SESSION['event_id'] = $row['event_id'];
                         $_SESSION['p_mail'] = $row['p_mail'];
                         $_SESSION['p_password'] = $row['p_password'];
+
+                        $_SESSION['event_name'] = $row['event_name'];
+                       
+                         $_SESSION["event_sdate"]= $row["event_sdate"];
+                        $_SESSION["event_stime"]= $row["event_stime"];
+                        $_SESSION["event_etime"]= $row["event_etime"];
+                         $_SESSION["event_edate"]= $row["event_edate"];
+                         $_SESSION["event_venue"]= $row["event_venue"];
+                          $_SESSION["organizer"]= $row["organizer"];
+                           $_SESSION["event_desc"]= $row["event_desc"];
+                           $_SESSION["event_broc"]= $row["event_event_broc"];
+
+
+                           
+                        // echo "hi".
                         // echo" hi ";
                         header("Location: admin.html");
                         exit();
