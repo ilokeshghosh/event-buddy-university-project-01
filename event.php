@@ -61,18 +61,18 @@ include "db_conn.php";
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a href="index.html" class="navbar-brand"><img style="height:40px; width: 40px;
+            <a href="index.php" class="navbar-brand"><img style="height:40px; width: 40px;
                 " src="assets/logo/eb-white-bg-logo.png" alt=""> Event Buddy</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="index.html#events-section" class="nav-item nav-link">Events</a>
+                    <a href="index.php" class="nav-item nav-link active">Home</a>
+                    <a href="index.php#events-section" class="nav-item nav-link">Events</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="signup-login.html" class="nav-item nav-link">Login / Creat an Event</a>
+                    <a href="signup-login.php" class="nav-item nav-link">Login / Creat an Event</a>
                 </div>
             </div>
         </div>

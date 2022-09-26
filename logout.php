@@ -6,7 +6,4 @@ session_unset();
 session_destroy();
 
 
-header("Location: signup-login.html");
-
-
-?>
+header("Location:index.php");

@@ -13,11 +13,9 @@ include "db_conn.php";
 
     <link rel="icon" type="image/x-icon" href="assets/logo/eb-transperent-logo.png" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
 
@@ -35,7 +33,7 @@ include "db_conn.php";
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a href="index.html" class="navbar-brand"><img style="height:40px; width: 40px;
+            <a href="index.php" class="navbar-brand"><img style="height:40px; width: 40px;
                 " src="assets/logo/eb-white-bg-logo.png" alt=""> Event Buddy</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -53,12 +51,12 @@ include "db_conn.php";
     <div class="container">
         <!-- home-heading  -->
         <div id="event-details" class="p-5 home-heading">
-           
-          
+
+
             <div class="home-heading-content">
                 <div class="container-lg my-3">
-                    <h1>  <?php echo $_SESSION['event_name']; ?> </h1>
-                    <p class="lead"> <?php echo $_SESSION['organizer']; ?> 
+                    <h1> <?php echo $_SESSION['event_name']; ?> </h1>
+                    <p class="lead"> <?php echo $_SESSION['organizer']; ?>
                     <p>
                     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                         <!-- Carousel indicators -->
@@ -70,16 +68,13 @@ include "db_conn.php";
                         <!-- Wrapper for carousel items -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                                    class="d-block w-100" alt="Slide 1">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                                    class="d-block w-100" alt="Slide 2">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                                    class="d-block w-100" alt="Slide 3">
+                                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="Slide 3">
                             </div>
                         </div>
                         <!-- Carousel controls -->
@@ -111,56 +106,54 @@ include "db_conn.php";
                 <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">
                     Edit Event Details
                 </h1>
-    
+
                 <input type="text" id="event-name" class="form-control" placeholder="Event Name" required="" autofocus="" />
-    
-                <input type="text" id="event-organizer" class="form-control" placeholder="Event Organizer" required=""
-                    autofocus="" />
-    
+
+                <input type="text" id="event-organizer" class="form-control" placeholder="Event Organizer" required="" autofocus="" />
+
                 <label for="event-start-date">Event Start Date :</label>
                 <input type="date" id="event-start-date" class="form-control" required="" autofocus="" />
-    
+
                 <label for="event-start-time">Event Start Time :</label>
                 <input type="time" id="event-start-time" class="form-control" required="" autofocus="" />
-    
+
                 <label for="event-end-date">Event End Date :</label>
                 <input type="date" id="event-end-date" class="form-control" required="" autofocus="" />
-    
+
                 <label for="event-end-time">Event End Time :</label>
                 <input type="time" id="event-end-duration" class="form-control" required="" autofocus="" />
-    
+
                 <label for="event-description">Event Description :</label>
                 <textarea class="form-control" id="event-description" rows="3">Event Description ...</textarea>
-    
-                <input type="text" id="event-venue" class="form-control" placeholder="Event Venue" required=""
-                    autofocus="" />
-    
+
+                <input type="text" id="event-venue" class="form-control" placeholder="Event Venue" required="" autofocus="" />
+
                 <label for="event-brochure">Event Brochure:</label>
                 <input type="file" id="event-brochure" name="event-brochure">
 
                 <label for="Carousel-image">Carousel image: (3, 1460x620 images)</label>
-                <input type="file" accept="image/*"  multiple id="corousel-image" name="corousel-image">
-    
+                <input type="file" accept="image/*" multiple id="corousel-image" name="corousel-image">
+
                 <button class="btn btn-primary btn-block btn-danger" type="reset">
                     <i class="fas fa-eraser"></i> Reset
                 </button>
-    
+
                 <button class="btn btn-primary btn-block" type="submit">
                     <i class="fas fa-user-plus"></i> Save
                 </button>
 
                 <a href="#" id="back-1"><i class="fas fa-angle-left"></i> Back</a>
-    
+
             </form>
         </div>
-        
+
 
         <!-- participant-list -->
         <div id="participant-list" class="participant-list">
             <div class="participant-list-title">
                 <h2>Participant List</h2>
             </div>
-            
+
             <!-- <table class="table table-dark">
                 <thead>
                     <tr>
@@ -203,15 +196,15 @@ include "db_conn.php";
 
             <!-- <?php ?> -->
 
-                <?php 
+            <?php
 
-                    $event =  $_SESSION['event_id'];
-                    // PHP MySQL Use The ORDER BY Clause
-                    $sql = "SELECT * FROM participants WHERE event_id ='$event'";
-                    $result = $conn->query($sql);
-                    $row_cont=1;
-                    if ($result->num_rows > 0) {
-                        echo "
+            $event =  $_SESSION['event_id'];
+            // PHP MySQL Use The ORDER BY Clause
+            $sql = "SELECT * FROM participants WHERE event_id ='$event'";
+            $result = $conn->query($sql);
+            $row_cont = 1;
+            if ($result->num_rows > 0) {
+                echo "
                         <table class='table table-dark'>
                             <thead>
                                 <tr>
@@ -225,15 +218,15 @@ include "db_conn.php";
                             <tbody>
                         
                             ";
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr><td>"."$row_cont"."</td><td>".$row["p_name"]."</td><td>".$row["p_email"]."</td></tr>";
-                        $row_cont++;
-                    }
-                    } else {
-                    echo "0 results";
-                    }
-                ?>
-                    <!-- <tr>
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr><td>" . "$row_cont" . "</td><td>" . $row["p_name"] . "</td><td>" . $row["p_email"] . "</td></tr>";
+                    $row_cont++;
+                }
+            } else {
+                echo "0 results";
+            }
+            ?>
+            <!-- <tr>
                         <td>1</td>
                         <td>Test Name</td>
                         <td>email@testemail.com</td>
@@ -241,7 +234,7 @@ include "db_conn.php";
                         <td><button><i class="bi bi-shield-fill-x"></i></button></td>
                         <td>Attended</td>
                     </tr> -->
-                    <!-- <tr>
+            <!-- <tr>
                         <td>2</td>
                         <td>Test Name</td>
                         <td>email@testemail.com</td>
@@ -257,7 +250,7 @@ include "db_conn.php";
                         <td><button><i class="bi bi-shield-fill-x"></i></button></td>
                         <td></td>
                     </tr> -->
-                </tbody>
+            </tbody>
             </table>
             <button class="btn btn-primary">Download As Excel File</button><br>
             <a href="#" id="back-2"><i class="fas fa-angle-left"></i> Back</a>
@@ -301,8 +294,7 @@ include "db_conn.php";
         <!-- footer  -->
         <footer>
             <div class="footer-content">
-                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i
-                        class="bi bi-github"></i></a>
+                <a href="https://github.com/rdtech2002/event-buddy-university-project-01" target="_blank"><i class="bi bi-github"></i></a>
                 <p>Copyright © 2022 Event Buddy</p>
             </div>
         </footer>
@@ -316,48 +308,45 @@ include "db_conn.php";
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-
         function toggleplist(e) {
             e.preventDefault();
             $("#event-details").toggle();
-            $("#participant-list").toggle(); 
+            $("#participant-list").toggle();
         }
 
         function togglelplist(e) {
             e.preventDefault();
             $("#event-details").toggle();
-            $("#live-participant-list").toggle(); 
+            $("#live-participant-list").toggle();
         }
 
         function editevent(e) {
             e.preventDefault();
             $("#event-details").toggle();
-            $("#logreg-forms .form-signup").toggle(); 
+            $("#logreg-forms .form-signup").toggle();
         }
 
         function back1(e) {
             e.preventDefault();
-            $("#event-details").toggle(); 
-            $("#logreg-forms .form-signup").toggle(); 
+            $("#event-details").toggle();
+            $("#logreg-forms .form-signup").toggle();
         }
 
         function back2(e) {
             e.preventDefault();
-            $("#event-details").toggle(); 
-            $("#participant-list").toggle(); 
+            $("#event-details").toggle();
+            $("#participant-list").toggle();
         }
 
         function back3(e) {
             e.preventDefault();
-            $("#event-details").toggle(); 
-            $("#live-participant-list").toggle(); 
+            $("#event-details").toggle();
+            $("#live-participant-list").toggle();
         }
 
         $(() => {
@@ -368,7 +357,7 @@ include "db_conn.php";
             $("#back-1").click(back1);
             $("#back-2").click(back2);
             $("#back-3").click(back3);
-            
+
         });
     </script>
 </body>
