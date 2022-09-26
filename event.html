@@ -1,10 +1,49 @@
+<?php
+session_start();
+include "db_conn.php";
+?>
+
+
+<?php 
+        //   $hi=$_SESSION['event_ids'];
+        //   $sql = "SELECT * FROM admins WHERE event_id = '$hi'";
+        //   $result = $conn->query($sql);
+
+        //   if ($result->num_rows > 0) {
+
+        //   // output data of each row
+        //   while($row = $result->fetch_assoc()) {
+         
+
+            
+          $i=$_SESSION["i"];
+
+          if ($_SESSION["i"] > 0) {
+
+          
+        //   while($i>=1) 
+          for(;$i>=1; $i--){
+            $temp=$_SESSION['event_ids'][$i];
+            $sql = "SELECT * FROM admins WHERE event_id = $temp";
+            $result = $conn->query($sql);
+            while($row = $result->fetch_assoc()) {
+                // echo $row['event_id'];d
+                
+            
+            
+         
+
+      ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Event Name</title>
+    <title><?php echo $row["event_name"]?></title>
 
     <link rel="icon" type="image/x-icon" href="assets/logo/eb-transperent-logo.png" />
 
@@ -44,10 +83,23 @@
         <div class="p-5 home-heading">
             <div class="home-heading-content">
 
-                <div class="container-lg my-3">
+
+            <!-- <div class="container-lg my-3">
                     <h1>Event Name</h1>
                     <p class="lead">MAULANA ABUL KALAM AZAD UNIVERSITY OF TECHNOLOGY, WEST BENGAL
+                    <p> -->
+
+        
+
+               
+                <div class="container-lg my-3">
+                    <h1><?php echo $row["event_name"]?></h1>
+                    <p class="lead"><?php echo $row["organizer"]?>
                     <p>
+
+
+
+
                     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                         <!-- Carousel indicators -->
                         <ol class="carousel-indicators">
@@ -117,6 +169,7 @@
                         
                     
             </div>
+
         </div>
 
         <!-- footer  -->
@@ -132,3 +185,16 @@
 </body>
 
 </html>
+
+
+<?php
+       
+            }
+           
+        }
+         
+          } else {
+              echo "0 results";
+          }
+            
+            ?>
